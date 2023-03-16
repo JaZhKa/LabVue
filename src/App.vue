@@ -1,7 +1,9 @@
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header>Header</el-header>
+      <el-header>
+        <h1>Header</h1>
+      </el-header>
       <el-container>
         <el-aside width="200px">
           <el-row class="mb-4">
@@ -92,7 +94,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
 }
 
