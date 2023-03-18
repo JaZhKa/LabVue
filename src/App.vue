@@ -1,5 +1,5 @@
 <template>
-  <div class="common-layout">
+   <div class="common-layout">
     <el-container>
       <el-header>
         <h1>Header</h1>
