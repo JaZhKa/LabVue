@@ -20,7 +20,7 @@
       />
     </el-form-item>
     <el-form-item>
-      <el-button type="primary" @click="submitForm(ruleFormRef)"
+      <el-button type="primary" :plain="true" @click="submitForm(ruleFormRef)"
         >Submit</el-button
       >
       <el-button @click="resetForm(ruleFormRef)">Reset</el-button>
@@ -31,6 +31,7 @@
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
+import { ElMessage } from 'element-plus'
 
 const ruleFormRef = ref<FormInstance>()
 
@@ -80,10 +81,32 @@ const rules = reactive<FormRules>({
   email: [{ validator: checkEmail, trigger: 'blur' }],
 })
 
+const sendForm = function(){fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'auth',
+    userEmail: ruleForm.email,
+    userPass: ruleForm.pass,
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+}
+
+const sendAuth = () => {
+  ElMessage('Data has been sent')
+}
+
 const submitForm = (formEl: FormInstance | undefined) => {
   if (!formEl) return
   formEl.validate((valid) => {
     if (valid) {
+      sendForm()
+      sendAuth()
       console.log('submit!')
     } else {
       alert('Fill in all the fields!')
