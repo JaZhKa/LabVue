@@ -6,6 +6,9 @@
     :rules="rules"
     label-width="120px"
     class="demo-ruleForm">
+    <el-form-item label="Email" prop="email">
+      <el-input v-model="ruleForm.email" />
+    </el-form-item>
     <el-form-item label="Password" prop="pass">
       <el-input v-model="ruleForm.pass" type="password" autocomplete="off" />
     </el-form-item>
@@ -15,9 +18,6 @@
         type="password"
         autocomplete="off"
       />
-    </el-form-item>
-    <el-form-item label="Age" prop="age">
-      <el-input v-model.number="ruleForm.age" />
     </el-form-item>
     <el-form-item>
       <el-button type="primary" @click="submitForm(ruleFormRef)"
@@ -34,20 +34,16 @@ import type { FormInstance, FormRules } from 'element-plus'
 
 const ruleFormRef = ref<FormInstance>()
 
-const checkAge = (rule: any, value: any, callback: any) => {
+const checkEmail = (rule: any, value: any, callback: any) => {
   if (!value) {
-    return callback(new Error('Please input the age'))
+    return callback(new Error('Please input the Email'))
   }
   setTimeout(() => {
-    if (!Number.isInteger(value)) {
-      callback(new Error('Please input digits'))
-    } else {
-      if (value < 18) {
-        callback(new Error('Age must be greater than 18'))
+    if (!value.includes('@')) {
+      callback(new Error('Please input Email'))
       } else {
         callback()
       }
-    }
   }, 1000)
 }
 
@@ -75,13 +71,13 @@ const validatePass2 = (rule: any, value: any, callback: any) => {
 const ruleForm = reactive({
   pass: '',
   checkPass: '',
-  age: '',
+  email: '',
 })
 
 const rules = reactive<FormRules>({
   pass: [{ validator: validatePass, trigger: 'blur' }],
   checkPass: [{ validator: validatePass2, trigger: 'blur' }],
-  age: [{ validator: checkAge, trigger: 'blur' }],
+  email: [{ validator: checkEmail, trigger: 'blur' }],
 })
 
 const submitForm = (formEl: FormInstance | undefined) => {
@@ -90,7 +86,7 @@ const submitForm = (formEl: FormInstance | undefined) => {
     if (valid) {
       console.log('submit!')
     } else {
-      console.log('error submit!')
+      alert('Fill in all the fields!')
       return false
     }
   })
