@@ -1,9 +1,7 @@
 <template>
   <div class="common-layout">
    <el-container>
-     <el-header>
-       <h1>Header</h1>
-     </el-header>
+    <HeaderComp></HeaderComp>
      <el-container>
        <el-aside width="200px">
          <el-row class="mb-4">
@@ -27,9 +25,21 @@
 </template>
 
 <script lang="ts" setup>
+// import HeaderComp from './components/Layout-container-header.vue'
 import { defineAsyncComponent } from 'vue'
 const FormComp = defineAsyncComponent(() => import('./components/Form-auth.vue'))
+// const HeaderComp = defineAsyncComponent(() => import('./components/Layout-container-header.vue'))
+
 </script>
+
+  <!-- <script>
+  import HeaderComp from './components/Layout-container-header.vue'
+  export default {
+    components: {
+      HeaderComp
+    }
+  }
+  </script> -->
 
 <style>
 #app {
@@ -40,7 +50,6 @@ const FormComp = defineAsyncComponent(() => import('./components/Form-auth.vue')
  margin-top: 60px;
 }
 
-.el-header,
 .el-footer {
  background-color: #3375b9;
 }
