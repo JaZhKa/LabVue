@@ -1,70 +1,174 @@
 <template>
-  <div class="common-layout">
-   <el-container>
-    <HeaderComp></HeaderComp>
-     <el-container>
-       <el-aside width="200px">
-         <el-row class="mb-4">
-           <el-button>Default</el-button>
-           <el-button type="primary">Primary</el-button>
-           <el-button type="success">Success</el-button>
-           <el-button type="info">Info</el-button>
-           <el-button type="warning">Warning</el-button>
-           <el-button type="danger">Danger</el-button>
-         </el-row>
-       </el-aside>
-       <el-container>
-         <el-main> 
-           <FormComp></FormComp>
-         </el-main>
-         <el-footer>Footer</el-footer>
-       </el-container>
-     </el-container>
-   </el-container>
- </div>
+	<div class="common-layout">
+		<el-container>
+			<HeaderComp />
+			<el-container class="main-container">
+				<MainMenuComp />
+				<el-container>
+					<el-main>
+						<FormComp></FormComp>
+					</el-main>
+				</el-container>
+			</el-container>
+		</el-container>
+	</div>
 </template>
 
-<script lang="ts" setup>
-// import HeaderComp from './components/Layout-container-header.vue'
-import { defineAsyncComponent } from 'vue'
-const FormComp = defineAsyncComponent(() => import('./components/Form-auth.vue'))
-// const HeaderComp = defineAsyncComponent(() => import('./components/Layout-container-header.vue'))
+<script lang="ts">
+	import HeaderComp from './components/Layout-container-header.vue';
+	import MainMenuComp from './components/Main-menu.vue'
 
+	export default {
+		components: {
+			HeaderComp,
+			MainMenuComp
+		},
+	};
 </script>
 
-  <!-- <script>
-  import HeaderComp from './components/Layout-container-header.vue'
-  export default {
-    components: {
-      HeaderComp
-    }
-  }
-  </script> -->
+<script lang="ts" setup>
+	import { defineAsyncComponent } from 'vue';
+
+	const FormComp = defineAsyncComponent(
+		() => import('./components/Form-auth.vue')
+	);
+</script>
 
 <style>
-#app {
- font-family: Avenir, Helvetica, Arial, sans-serif;
- -webkit-font-smoothing: antialiased;
- -moz-osx-font-smoothing: grayscale;
- text-align: center;
- margin-top: 60px;
-}
+	html,
+	body,
+	div,
+	span,
+	applet,
+	object,
+	iframe,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	blockquote,
+	pre,
+	a,
+	abbr,
+	acronym,
+	address,
+	big,
+	cite,
+	code,
+	del,
+	dfn,
+	em,
+	img,
+	ins,
+	kbd,
+	q,
+	s,
+	samp,
+	small,
+	strike,
+	strong,
+	sub,
+	sup,
+	tt,
+	var,
+	b,
+	u,
+	i,
+	center,
+	dl,
+	dt,
+	dd,
+	ol,
+	ul,
+	li,
+	fieldset,
+	form,
+	label,
+	legend,
+	table,
+	caption,
+	tbody,
+	tfoot,
+	thead,
+	tr,
+	th,
+	td,
+	article,
+	aside,
+	canvas,
+	details,
+	embed,
+	figure,
+	figcaption,
+	footer,
+	header,
+	hgroup,
+	menu,
+	nav,
+	output,
+	ruby,
+	section,
+	summary,
+	time,
+	mark,
+	audio,
+	video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
 
-.el-footer {
- background-color: #3375b9;
-}
+	article,
+	aside,
+	details,
+	figcaption,
+	figure,
+	footer,
+	header,
+	hgroup,
+	menu,
+	nav,
+	section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol,
+	ul {
+		list-style: none;
+	}
+	blockquote,
+	q {
+		quotes: none;
+	}
+	blockquote:before,
+	blockquote:after,
+	q:before,
+	q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
 
-.el-aside {
- background-color: #66b1ff;
-}
+	
+	.el-container{
+		display: block;
+	}
 
-.el-row {
- display: flex;
- flex-wrap: nowrap;
- flex-direction: column;
-}
-
-.el-button {
- margin: 5px;
-}
+	.main-container {
+		display: flex;
+		flex-direction: row;
+		margin: auto;
+		width: 1200px;
+	}
 </style>
