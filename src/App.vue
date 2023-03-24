@@ -6,7 +6,7 @@
 				<MainMenuComp />
 				<el-container>
 					<el-main>
-						<FormComp></FormComp>
+						<router-view></router-view>
 					</el-main>
 				</el-container>
 			</el-container>
@@ -16,12 +16,12 @@
 
 <script lang="ts">
 	import HeaderComp from './components/Layout-container-header.vue';
-	import MainMenuComp from './components/Main-menu.vue'
+	import MainMenuComp from './components/Main-menu.vue';
 
 	export default {
 		components: {
 			HeaderComp,
-			MainMenuComp
+			MainMenuComp,
 		},
 	};
 </script>
@@ -160,8 +160,7 @@
 		border-spacing: 0;
 	}
 
-	
-	.el-container{
+	.el-container {
 		display: block;
 	}
 

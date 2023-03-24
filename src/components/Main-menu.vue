@@ -28,10 +28,12 @@
 					<el-icon><icon-menu /></el-icon>
 					<span>Navigator Two</span>
 				</el-menu-item>
-				<el-menu-item index="3">
-					<el-icon><setting /></el-icon>
-					<span>Navigator Three</span>
-				</el-menu-item>
+				<router-link to="/auth">
+					<el-menu-item index="3">
+						<el-icon><setting /></el-icon>
+						<span>Sign In</span>
+					</el-menu-item>
+				</router-link>
 			</el-menu>
 		</el-col>
 	</div>
@@ -51,5 +53,9 @@
 <style scoped>
 	.el-menu {
 		width: 200px;
+	}
+
+	a{
+		text-decoration: none;
 	}
 </style>
