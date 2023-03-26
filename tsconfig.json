@@ -14,6 +14,7 @@
     "useDefineForClassFields": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "outDir": "dist",
     "types": [
       "element-plus/global"
     ],
@@ -34,8 +35,10 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
-, "src/main.js"  ],
+    "tests/**/*.tsx",
+    "src/main.ts",
+    "src/router.js"  
+  ],
   "exclude": [
     "node_modules"
   ]
