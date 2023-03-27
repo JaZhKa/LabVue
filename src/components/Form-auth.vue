@@ -8,15 +8,15 @@
 		class="demo-ruleForm"
 	>
 		<el-form-item
-			label="Email"
+			label=""
 			prop="email"
-		>
+		>{{ $t('labelEmail') }}
 			<el-input v-model="ruleForm.email" />
 		</el-form-item>
 		<el-form-item
-			label="Password"
+			label=""
 			prop="pass"
-		>
+		>{{ $t('labelPassword') }}
 			<el-input
 				v-model="ruleForm.pass"
 				type="password"
@@ -24,9 +24,9 @@
 			/>
 		</el-form-item>
 		<el-form-item
-			label="Confirm"
+			label=""
 			prop="checkPass"
-		>
+		>{{ $t('labelConfirm') }}
 			<el-input
 				v-model="ruleForm.checkPass"
 				type="password"
@@ -38,27 +38,29 @@
 				type="primary"
 				:plain="true"
 				@click="submitForm(ruleFormRef)"
-				>Submit</el-button
+				>{{ $t('btnSubmit') }}</el-button
 			>
-			<el-button @click="resetForm(ruleFormRef)">Reset</el-button>
+			<el-button @click="resetForm(ruleFormRef)">{{ $t('btnReset') }}</el-button>
 		</el-form-item>
 	</el-form>
 </template>
 
 <script lang="ts" setup>
-	import { reactive, ref } from 'vue';
+	import { reactive, ref, computed } from 'vue';
 	import type { FormInstance, FormRules } from 'element-plus';
 	import { ElNotification } from 'element-plus';
+  import { useI18n } from 'vue-i18n';
 
+  const { t } = useI18n();
 	const ruleFormRef = ref<FormInstance>();
 
-	const checkEmail = (rule: any, value: any, callback: any) => {
+	const checkEmail = (rule: any, value: any, callback: any, someProperty: any) => {
 		if (!value) {
-			return callback(new Error('Please input the Email'));
+			return callback(new Error(t('invalidMesEmail')));
 		}
 		setTimeout(() => {
 			if (!value.includes('@')) {
-				callback(new Error('Please input Email'));
+				callback(new Error(t('invalidMesEmail')));
 			} else {
 				callback();
 			}
@@ -67,7 +69,7 @@
 
 	const validatePass = (rule: any, value: any, callback: any) => {
 		if (value === '') {
-			callback(new Error('Please input the password'));
+			callback(new Error(t('invalidMesPassword')));
 		} else {
 			if (ruleForm.checkPass !== '') {
 				if (!ruleFormRef.value) return;
@@ -78,9 +80,9 @@
 	};
 	const validatePass2 = (rule: any, value: any, callback: any) => {
 		if (value === '') {
-			callback(new Error('Please input the password again'));
+			callback(new Error(t('invalidMesConfirm')));
 		} else if (value !== ruleForm.pass) {
-			callback(new Error("Two inputs don't match!"));
+			callback(new Error(t('invalidMesConfirmNotMatch')));
 		} else {
 			callback();
 		}
@@ -123,27 +125,27 @@
 
 	const open1 = () => {
 		ElNotification({
-			title: 'Success',
-			message: 'Data has been sent',
+			title: t('ENotificatoinSuccessTitle'),
+			message: t('ENotificatoinSuccessMes'),
 			type: 'success',
 		});
 	};
 
-  const open2 = () => {
-  ElNotification({
-    title: 'Warning',
-    message: 'Fill in all the fields!',
-    type: 'warning',
-  })
-}
+	const open2 = () => {
+		ElNotification({
+			title: t('ENotificatoinWarningTitle'),
+			message: t('ENotificatoinWarningMes'),
+			type: 'warning',
+		});
+	};
 
-  const open4 = () => {
-  ElNotification({
-    title: 'Error',
-    message: 'Fail!',
-    type: 'error',
-  })
-}
+	const open4 = () => {
+		ElNotification({
+			title: t('ENotificatoinErrorTitle'),
+			message: t('ENotificatoinErrorMes'),
+			type: 'error',
+		});
+	};
 
 	const submitForm = (formEl: FormInstance | undefined) => {
 		if (!formEl) return;
