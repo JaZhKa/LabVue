@@ -28,12 +28,10 @@
 
 <script lang="ts" setup>
 	import { defineAsyncComponent } from 'vue';
-	import { useI18n } from 'vue-i18n';
 
 	const FormComp = defineAsyncComponent(
 		() => import('./components/Form-auth.vue')
 	);
-	const { t } = useI18n({ useScope: 'global' });
 </script>
 
 <style>

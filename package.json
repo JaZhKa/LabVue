@@ -28,6 +28,7 @@
     "eslint": "^8.36.0",
     "eslint-plugin-vue": "^9.10.0",
     "node-sass": "^8.0.0",
+    "rollup-plugin-replace": "^2.2.0",
     "sass-loader": "^13.2.1",
     "typescript": "~5.0.2",
     "vue-cli-plugin-element": "^1.0.1"

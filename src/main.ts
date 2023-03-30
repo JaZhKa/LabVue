@@ -5,8 +5,7 @@ import 'element-plus/dist/index.css';
 import App from './App.vue';
 import router from './router';
 import { createI18n, useI18n } from 'vue-i18n';
-import { languages } from './langs';
-import { defaultLocale } from './langs';
+import { languages, defaultLocale, dateTimeFormats } from './langs';
 
 const app = createApp(App, {
 	setup() {
@@ -15,12 +14,15 @@ const app = createApp(App, {
 	},
 });
 
+const datetimeFormats = Object.assign(dateTimeFormats)
 const messages = Object.assign(languages);
 const i18n = createI18n({
 	legacy: false,
-	fallbacklocal: 'en',
+	fallbacklocal: 'cn',
 	locale: defaultLocale,
+	globalInjection: true,
 	messages,
+	datetimeFormats
 });
 
 app.use(ElementPlus);
