@@ -24,10 +24,12 @@
 						<el-menu-item index="1-4-1">{{ $t('itemOne') }}</el-menu-item>
 					</el-sub-menu>
 				</el-sub-menu>
-				<el-menu-item index="2">
-					<el-icon><icon-menu /></el-icon>
-					<span>{{ $t('navTwo') }}</span>
-				</el-menu-item>
+				<router-link to="/plur">
+					<el-menu-item index="2">
+						<el-icon><icon-menu /></el-icon>
+						<span>{{ $t('navTwo') }}</span>
+					</el-menu-item>
+				</router-link>
 				<router-link to="/auth">
 					<el-menu-item index="3">
 						<el-icon><setting /></el-icon>

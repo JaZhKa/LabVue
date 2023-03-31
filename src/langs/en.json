@@ -2,7 +2,7 @@
 	"headTitle": "Header",
 	"errorMessege": "ERROR: 404 Not Found!",
 	"navOne": "Navigator One",
-	"navTwo": "Navigator Two",
+	"navTwo": "Pluralization",
 	"itemOne": "item one",
 	"itemTwo": "item two",
 	"itemThree": "item three",
@@ -22,5 +22,6 @@
 	"ENotificatoinWarningTitle": "Warning",
 	"ENotificatoinWarningMes": "Fill in all the fields!",
 	"ENotificatoinErrorTitle": "Error",
-	"ENotificatoinErrorMes": "Fail!"
+	"ENotificatoinErrorMes": "Fail!",
+	"plur": "no apples | one apple | {n} apples"
 }
