@@ -10,13 +10,13 @@
 		<el-form-item
 			label=""
 			prop="email"
-		>{{ $t('labelEmail') }}
+			>{{ $t('labelEmail') }}
 			<el-input v-model="ruleForm.email" />
 		</el-form-item>
 		<el-form-item
 			label=""
 			prop="pass"
-		>{{ $t('labelPassword') }}
+			>{{ $t('labelPassword') }}
 			<el-input
 				v-model="ruleForm.pass"
 				type="password"
@@ -26,7 +26,7 @@
 		<el-form-item
 			label=""
 			prop="checkPass"
-		>{{ $t('labelConfirm') }}
+			>{{ $t('labelConfirm') }}
 			<el-input
 				v-model="ruleForm.checkPass"
 				type="password"
@@ -40,7 +40,9 @@
 				@click="submitForm(ruleFormRef)"
 				>{{ $t('btnSubmit') }}</el-button
 			>
-			<el-button @click="resetForm(ruleFormRef)">{{ $t('btnReset') }}</el-button>
+			<el-button @click="resetForm(ruleFormRef)">{{
+				$t('btnReset')
+			}}</el-button>
 		</el-form-item>
 	</el-form>
 </template>
@@ -49,12 +51,18 @@
 	import { reactive, ref, computed } from 'vue';
 	import type { FormInstance, FormRules } from 'element-plus';
 	import { ElNotification } from 'element-plus';
-  import { useI18n } from 'vue-i18n';
+	import { useI18n } from 'vue-i18n';
+	import axios from 'axios';
 
-  const { t } = useI18n();
+	const { t } = useI18n();
 	const ruleFormRef = ref<FormInstance>();
 
-	const checkEmail = (rule: any, value: any, callback: any, someProperty: any) => {
+	const checkEmail = (
+		rule: any,
+		value: any,
+		callback: any,
+		someProperty: any
+	) => {
 		if (!value) {
 			return callback(new Error(t('invalidMesEmail')));
 		}
@@ -100,25 +108,41 @@
 		email: [{ validator: checkEmail, trigger: 'blur' }],
 	});
 
-	const sendForm = function () {
-		fetch('https://jsonplaceholder.typicode.com/posts', {
-			method: 'POST',
-			body: JSON.stringify({
-				title: 'auth',
+	// const sendForm = function () {
+	// 	fetch('https://jsonplaceholder.typicode.com/posts', {
+	// 		method: 'POST',
+	// 		body: JSON.stringify({
+	// 			title: 'auth',
+	// 			userEmail: ruleForm.email,
+	// 			userPass: ruleForm.pass,
+	// 			userId: 1,
+	// 		}),
+	// 		headers: {
+	// 			'Content-type': 'application/json; charset=UTF-8',
+	// 		},
+	// 	})
+	// 		.then((response) => response.json())
+	// 		.then((json) => {
+	// 			console.log(json);
+	// 			open1();
+	// 		})
+	// 		.catch(() => {
+	// 			open4();
+	// 		});
+	// };
+
+	const sendForm = async function () {
+		axios
+			.post('https://jsonplaceholder.typicode.com/posts', {
 				userEmail: ruleForm.email,
 				userPass: ruleForm.pass,
-				userId: 1,
-			}),
-			headers: {
-				'Content-type': 'application/json; charset=UTF-8',
-			},
-		})
-			.then((response) => response.json())
-			.then((json) => {
-				console.log(json);
+			})
+			.then((response) => {
+				console.log(response);
 				open1();
 			})
-			.catch(() => {
+			.catch((error) => {
+				console.log(error);
 				open4();
 			});
 	};
