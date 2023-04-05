@@ -13,7 +13,9 @@
 						<span>{{ $t('navOne') }}</span>
 					</template>
 					<el-menu-item-group title="">
-						<el-menu-item index="1-1">{{ $t('itemOne') }}</el-menu-item>
+						<router-link to="/plur">
+							<el-menu-item index="1-1">{{ $t('itemOne') }}</el-menu-item>
+						</router-link>
 						<el-menu-item index="1-2">{{ $t('itemTwo') }}</el-menu-item>
 					</el-menu-item-group>
 					<el-menu-item-group title="">
@@ -24,7 +26,7 @@
 						<el-menu-item index="1-4-1">{{ $t('itemOne') }}</el-menu-item>
 					</el-sub-menu>
 				</el-sub-menu>
-				<router-link to="/plur">
+				<router-link to="/users">
 					<el-menu-item index="2">
 						<el-icon><icon-menu /></el-icon>
 						<span>{{ $t('navTwo') }}</span>

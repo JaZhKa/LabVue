@@ -2,8 +2,8 @@
 	"headTitle": "Header",
 	"errorMessege": "ERROR: 404 Not Found!",
 	"navOne": "Navigator One",
-	"navTwo": "Pluralization",
-	"itemOne": "item one",
+	"navTwo": "Users",
+	"itemOne": "Pluralization",
 	"itemTwo": "item two",
 	"itemThree": "item three",
 	"itemFour": "item four",
@@ -23,5 +23,7 @@
 	"ENotificatoinWarningMes": "Fill in all the fields!",
 	"ENotificatoinErrorTitle": "Error",
 	"ENotificatoinErrorMes": "Fail!",
+	"btnGetUsers": "Get users",
+	"UsersList": "List is empty.",
 	"plur": "no apples | one apple | {n} apples"
 }

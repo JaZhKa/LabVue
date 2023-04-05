@@ -2,8 +2,8 @@
 	"headTitle": "標頭",
 	"errorMessege": "未找到錯誤404！",
 	"navOne": "領航員一號",
-	"navTwo": "多元化",
-	"itemOne": "第一項",
+	"navTwo": "用戶",
+	"itemOne": "多元化",
 	"itemTwo": "第二項",
 	"itemThree": "第三項",
 	"itemFour": "第四項",
@@ -22,5 +22,7 @@
 	"ENotificatoinWarningTitle": "警告",
 	"ENotificatoinWarningMes": "填寫所有字段！",
 	"ENotificatoinErrorTitle": "錯誤",
-	"ENotificatoinErrorMes": "失敗！"
+	"ENotificatoinErrorMes": "失敗！",
+	"btnGetUsers": "獲取用戶",
+	"UsersList": "列表為空。"
 }
