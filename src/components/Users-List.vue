@@ -29,7 +29,7 @@
 				</el-descriptions-item>
 				<el-descriptions-item label="Address"
 					>{{
-						Object.values((user.address))
+						Object.values(user.address)
 							.slice(0, -1)
 							.join(', ')
 					}}

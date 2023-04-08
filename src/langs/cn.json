@@ -24,5 +24,6 @@
 	"ENotificatoinErrorTitle": "錯誤",
 	"ENotificatoinErrorMes": "失敗！",
 	"btnGetUsers": "獲取用戶",
-	"UsersList": "列表為空。"
+	"UsersList": "列表為空。",
+	"btnGoBack": "回去"
 }

@@ -25,5 +25,6 @@
 	"ENotificatoinErrorMes": "Fail!",
 	"btnGetUsers": "Get users",
 	"UsersList": "List is empty.",
-	"plur": "no apples | one apple | {n} apples"
+	"plur": "no apples | one apple | {n} apples",
+	"btnGoBack": "Go back"
 }
