@@ -6,7 +6,7 @@
 	>
 	<div v-if="success">
 		<el-descriptions
-			v-for="user in state.users"
+			v-for="user in users"
 			:key="user.id"
 			direction="vertical"
 			:column="4"
@@ -34,7 +34,6 @@
 	</div>
 	<div v-else>
 		<h1>{{ $t('globalText.UsersList') }}</h1>
-		<h2>{{ success }}</h2>
 	</div>
 </template>
 
