@@ -1,30 +1,42 @@
 {
-	"headTitle": "Header",
-	"errorMessege": "ERROR: 404 Not Found!",
-	"navOne": "Navigator One",
-	"navTwo": "Users",
-	"itemOne": "Pluralization",
-	"itemTwo": "item two",
-	"itemThree": "item three",
-	"itemFour": "item four",
-	"signIn": "Sign In",
-	"labelEmail": "Email",
-	"labelPassword": "Password",
-	"labelConfirm": "Confirm",
-	"btnSubmit": "Submit",
-	"btnReset": "Reset",
-	"invalidMesEmail": "Please input the Email",
-	"invalidMesPassword": "Please input the password",
-	"invalidMesConfirm": "Please input the password again",
-	"invalidMesConfirmNotMatch": "Two inputs don't match!",
-	"ENotificatoinSuccessTitle": "Success",
-	"ENotificatoinSuccessMes": "Data has been sent",
-	"ENotificatoinWarningTitle": "Warning",
-	"ENotificatoinWarningMes": "Fill in all the fields!",
-	"ENotificatoinErrorTitle": "Error",
-	"ENotificatoinErrorMes": "Fail!",
-	"btnGetUsers": "Get users",
-	"UsersList": "List is empty.",
-	"plur": "no apples | one apple | {n} apples",
-	"btnGoBack": "Go back"
+	"globalText": {
+		"headTitle": "Header",
+		"errorMessege": "ERROR: 404 Not Found!",
+		"UsersList": "List is empty.",
+		"plur": "no apples | one apple | {n} apples"
+	},
+	"mainMenu": {
+		"navOne": "Navigator One",
+		"navTwo": "Users",
+		"itemOne": "Pluralization",
+		"itemTwo": "item two",
+		"itemThree": "item three",
+		"itemFour": "item four",
+		"signIn": "Sign In"
+	},
+	"buttons": {
+		"btnSubmit": "Submit",
+		"btnReset": "Reset",
+		"btnGetUsers": "Get users",
+		"btnGoBack": "Go back"
+	},
+	"form": {
+		"labelEmail": "Email",
+		"labelPassword": "Password",
+		"labelConfirm": "Confirm"
+	},
+	"validation":{
+		"invalidMesEmail": "Please input the Email",
+		"invalidMesPassword": "Please input the password",
+		"invalidMesConfirm": "Please input the password again",
+		"invalidMesConfirmNotMatch": "Two inputs don't match!"
+	},
+	"notification":{
+		"ENotificatoinSuccessTitle": "Success",
+		"ENotificatoinSuccessMes": "Data has been sent",
+		"ENotificatoinWarningTitle": "Warning",
+		"ENotificatoinWarningMes": "Fill in all the fields!",
+		"ENotificatoinErrorTitle": "Error",
+		"ENotificatoinErrorMes": "Fail!"
+	}
 }

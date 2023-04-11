@@ -5,7 +5,7 @@
 			placeholder="Count"
 			v-model.number="count"
 		/>
-		<p>{{ $t('plur', count) }}</p>
+		<p>{{ $t('globalText.plur', count) }}</p>
 	</div>
 </template>
 

@@ -1,29 +1,41 @@
 {
-	"headTitle": "標頭",
-	"errorMessege": "未找到錯誤404！",
-	"navOne": "領航員一號",
-	"navTwo": "用戶",
-	"itemOne": "多元化",
-	"itemTwo": "第二項",
-	"itemThree": "第三項",
-	"itemFour": "第四項",
-	"signIn": "登入",
-	"labelEmail": "電子郵件",
-	"labelPassword": "密碼",
-	"labelConfirm": "確認",
-	"btnSubmit": "提交",
-	"btnReset": "重置",
-	"invalidMesEmail": "請輸入電郵",
-	"invalidMesPassword": "請輸入密碼",
-	"invalidMesConfirm": "請重新輸入密碼",
-	"invalidMesConfirmNotMatch": "兩個輸入不匹配！",
-	"ENotificatoinSuccessTitle": "成功",
-	"ENotificatoinSuccessMes": "數據已發送",
-	"ENotificatoinWarningTitle": "警告",
-	"ENotificatoinWarningMes": "填寫所有字段！",
-	"ENotificatoinErrorTitle": "錯誤",
-	"ENotificatoinErrorMes": "失敗！",
-	"btnGetUsers": "獲取用戶",
-	"UsersList": "列表為空。",
-	"btnGoBack": "回去"
+	"globalText": {
+		"headTitle": "標頭",
+		"errorMessege": "未找到錯誤404！",
+		"UsersList": "列表為空。"
+	},
+	"mainMenu": {
+		"navOne": "領航員一號",
+		"navTwo": "用戶",
+		"itemOne": "多元化",
+		"itemTwo": "第二項",
+		"itemThree": "第三項",
+		"itemFour": "第四項",
+		"signIn": "登入"
+	},
+	"buttons": {
+		"btnSubmit": "提交",
+		"btnReset": "重置",
+		"btnGetUsers": "獲取用戶",
+		"btnGoBack": "回去"
+	},
+	"form": {
+		"labelEmail": "電子郵件",
+		"labelPassword": "密碼",
+		"labelConfirm": "確認"
+	},
+	"validation": {
+		"invalidMesEmail": "請輸入電郵",
+		"invalidMesPassword": "請輸入密碼",
+		"invalidMesConfirm": "請重新輸入密碼",
+		"invalidMesConfirmNotMatch": "兩個輸入不匹配！"
+	},
+	"notification": {
+		"ENotificatoinSuccessTitle": "成功",
+		"ENotificatoinSuccessMes": "數據已發送",
+		"ENotificatoinWarningTitle": "警告",
+		"ENotificatoinWarningMes": "填寫所有字段！",
+		"ENotificatoinErrorTitle": "錯誤",
+		"ENotificatoinErrorMes": "失敗！"
+	}
 }
