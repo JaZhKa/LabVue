@@ -1,6 +1,6 @@
 <template>
-	<el-button @click="goBack">{{$t('btnGoBack')}}</el-button>
-	<h1>{{ $t('errorMessege') }}</h1>
+	<el-button @click="goBack">{{$t('buttons.btnGoBack')}}</el-button>
+	<h1>{{ $t('globalText.errorMessege') }}</h1>
 </template>
 
 <script>

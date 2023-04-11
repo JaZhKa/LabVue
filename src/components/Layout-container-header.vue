@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<el-header>
-			<h1>{{ $t('headTitle') }}</h1>
+			<h1>{{ $t('globalText.headTitle') }}</h1>
 			<p>{{ $d(new Date(), 'short') }}</p>
 			<select v-model="$i18n.locale">
       <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}</option>
