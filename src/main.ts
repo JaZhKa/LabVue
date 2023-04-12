@@ -6,6 +6,7 @@ import App from './App.vue';
 import router from './router';
 import { createI18n, useI18n } from 'vue-i18n';
 import { languages, defaultLocale, dateTimeFormats } from './langs';
+import store from './store';
 
 const app = createApp(App, {
 	setup() {
@@ -14,7 +15,7 @@ const app = createApp(App, {
 	},
 });
 
-const datetimeFormats = Object.assign(dateTimeFormats)
+const datetimeFormats = Object.assign(dateTimeFormats);
 const messages = Object.assign(languages);
 const i18n = createI18n({
 	legacy: false,
@@ -22,10 +23,11 @@ const i18n = createI18n({
 	locale: defaultLocale,
 	globalInjection: true,
 	messages,
-	datetimeFormats
+	datetimeFormats,
 });
 
 app.use(ElementPlus);
 app.use(router);
 app.use(i18n);
+app.use(store);
 app.mount('#app');
