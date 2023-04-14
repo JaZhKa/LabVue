@@ -12,16 +12,26 @@
 					</template>
 					<el-menu-item-group title="">
 						<router-link to="/plur">
-							<el-menu-item index="1-1">{{ $t('mainMenu.itemOne') }}</el-menu-item>
+							<el-menu-item index="1-1">{{
+								$t('mainMenu.itemOne')
+							}}</el-menu-item>
 						</router-link>
-						<el-menu-item index="1-2">{{ $t('mainMenu.itemTwo') }}</el-menu-item>
+						<router-link to="/filter">
+							<el-menu-item index="1-2">{{
+								$t('mainMenu.itemTwo')
+							}}</el-menu-item>
+						</router-link>
 					</el-menu-item-group>
 					<el-menu-item-group title="">
-						<el-menu-item index="1-3">{{ $t('mainMenu.itemThree') }}</el-menu-item>
+						<el-menu-item index="1-3">{{
+							$t('mainMenu.itemThree')
+						}}</el-menu-item>
 					</el-menu-item-group>
 					<el-sub-menu index="1-4">
 						<template #title>{{ $t('mainMenu.itemFour') }}</template>
-						<el-menu-item index="1-4-1">{{ $t('mainMenu.itemOne') }}</el-menu-item>
+						<el-menu-item index="1-4-1">{{
+							$t('mainMenu.itemOne')
+						}}</el-menu-item>
 					</el-sub-menu>
 				</el-sub-menu>
 				<router-link to="/users">

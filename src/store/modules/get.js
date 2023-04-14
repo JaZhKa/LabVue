@@ -5,9 +5,7 @@ export default {
 		users: [],
 	},
 	getters: {
-		getUsers(state) {
-			return state.users;
-		},
+		getUsers: (state) => state.users,
 	},
 	actions: {
 		async fetchUsers({ commit }) {
