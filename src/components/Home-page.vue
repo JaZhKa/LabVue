@@ -19,7 +19,6 @@
 			$t('mainMenu.signIn')
 		}}</el-button></router-link
 	>
-	<p>{{ date }}</p>{{ date }}
 </template>
 
 <script>
