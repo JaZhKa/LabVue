@@ -17,21 +17,19 @@
 <script lang="ts">
 	import HeaderComp from './components/Layout-container-header.vue';
 	import MainMenuComp from './components/Main-menu.vue';
-	
+	import { defineAsyncComponent } from 'vue';
+
 	export default {
 		components: {
 			HeaderComp,
 			MainMenuComp,
 		},
+		setup() {
+			const FormComp = defineAsyncComponent(
+				() => import('./components/Form-auth.vue')
+			);
+		},
 	};
-</script>
-
-<script lang="ts" setup>
-	import { defineAsyncComponent } from 'vue';
-
-	const FormComp = defineAsyncComponent(
-		() => import('./components/Form-auth.vue')
-	);
 </script>
 
 <style>
