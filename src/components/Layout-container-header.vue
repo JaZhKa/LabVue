@@ -1,7 +1,9 @@
 <template>
 	<div>
 		<el-header>
-			<h1>{{ $t('globalText.headTitle') }}</h1>
+			<router-link to="/">
+				<h1>{{ $t('globalText.headTitle') }}</h1>
+			</router-link>
 			<p>{{ $d(date, 'short') }}</p>
 			<select v-model="$i18n.locale">
 				<option
