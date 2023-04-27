@@ -9,7 +9,7 @@
 		v-loading="loading"
 		style="width: 100%"
 	>
-	<div v-if="success">
+		<div v-if="success">
 			<el-descriptions
 				v-for="user in users"
 				:key="user.id"
@@ -63,20 +63,19 @@
 		methods: {
 			async getUsers() {
 				this.loading = true;
-				setTimeout(() => {
-					axios
-						.get('https://jsonplaceholder.typicode.com/users')
-						.then((response) => {
-							this.users = response.data;
-							this.success = true;
-						})
-						.catch((error) => {
-							console.log(error);
-						})
-						.finally(() => {
-							this.loading = false;
-						})
-				}, 1000)
+
+				axios
+					.get('https://jsonplaceholder.typicode.com/users')
+					.then((response) => {
+						this.users = response.data;
+						this.success = true;
+					})
+					.catch((error) => {
+						console.log(error);
+					})
+					.finally(() => {
+						this.loading = false;
+					});
 			},
 		},
 	};
